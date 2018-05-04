@@ -23,7 +23,7 @@ class Queue:
 
 def getPossibleMoves(board):
     """
-    Returns a list filled with the row and column integers that can be swapped.
+    Returns a list filled with a list of row and column integers that can be swapped.
 
     An example of a return value is: [[0,1],[1,2]]. In the case of [0,1], the
     element in the 0'th row and 1'st column can be swapped.
@@ -39,16 +39,16 @@ def getPossibleMoves(board):
                 break
 
     if row + 1 <= 2: 
-        adj_list.append(board[row+1][col]) #need to get rid of board
+        adj_list.append([row+1, col]) #need to get rid of board
 
     if row - 1 >= 0:
-        adj_list.append(board[row-1][col])
+        adj_list.append([row-1, col])
 
     if col + 1 <= 2: 
-        adj_list.append(board[row][col+1])
+        adj_list.append([row, col+1])
 
     if col - 1 >= 0:
-        adj_list.append(board[row][col-1])
+        adj_list.append([row, col-1])
 
     return adj_list
         
